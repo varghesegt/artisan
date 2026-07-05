@@ -53,12 +53,12 @@ export default function ContactPage() {
               </div>
               <h2 className="font-label text-mid-grey mb-3 uppercase tracking-widest">Inquiries</h2>
               <a 
-                href="mailto:hello@artisanstudio.com" 
+                href="mailto:artisanstudio.in@gmail.com" 
                 className="font-serif text-3xl sm:text-4xl font-medium text-soft-black leading-snug hover:text-sage-dark transition-colors duration-300"
               >
-                hello@
+                artisanstudio.in
                 <br />
-                artisanstudio.com
+                @gmail.com
               </a>
               <div className="mt-6 flex items-center gap-2 text-sm font-medium text-sage-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-x-2 group-hover:translate-x-0">
                 Send an Email <ArrowUpRight className="w-4 h-4" />
@@ -74,12 +74,12 @@ export default function ContactPage() {
               </div>
               <h2 className="font-label text-mid-grey mb-3 uppercase tracking-widest">Direct Line</h2>
               <a 
-                href="tel:+919876543210" 
+                href="tel:+919487740471" 
                 className="font-serif text-3xl sm:text-4xl font-medium text-soft-black leading-snug hover:text-sage-dark transition-colors duration-300 tracking-tight"
               >
-                +91 98765
+                +91 94877
                 <br />
-                43210
+                40471
               </a>
               <div className="mt-6 flex items-center gap-2 text-sm font-medium text-sage-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300 -translate-x-2 group-hover:translate-x-0">
                 Call Us <ArrowUpRight className="w-4 h-4" />
