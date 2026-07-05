@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* ─── Google Fonts ─── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
-
 /* ─── Theme Tokens (Tailwind v4 @theme) ─── */
 @theme inline {
   /* Colors */
@@ -11,17 +8,17 @@
   --color-soft-black: #1A1A1A;
   --color-true-black: #000000;
   --color-warm-grey: #E5E5E0;
-  --color-mid-grey: #9A9A95;
-  --color-sage: #8B9A7B;
-  --color-sage-dark: #6B7A5B;
+  --color-mid-grey: #5A5A55;
+  --color-sage: #5A6A4B;
+  --color-sage-dark: #3B4A2B;
   --color-sage-light: #C5D4B5;
   --color-terracotta: #C4835A;
 
-  /* Fonts */
-  --font-serif: 'Playfair Display', 'Georgia', serif;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  /* Fonts - reference CSS vars from next/font/google (layout.tsx) */
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 
-  /* Font Sizes — editorial scale */
+  /* Font Sizes - editorial scale */
   --font-size-display: clamp(3rem, 8vw, 7.5rem);
   --font-size-h1: clamp(2.25rem, 5vw, 4.5rem);
   --font-size-h2: clamp(1.75rem, 3.5vw, 3rem);
