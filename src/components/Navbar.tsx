@@ -160,10 +160,10 @@ export default function Navbar() {
           >
             <p className="font-label text-mid-grey mb-4">Get in touch</p>
             <a
-              href="mailto:hello@artisan.studio"
-              className="text-soft-black text-lg font-medium hover:text-sage transition-colors"
+              href="mailto:artisanstudio.in@gmail.com"
+              className="text-soft-black text-lg font-medium hover:text-sage transition-colors break-all"
             >
-              hello@artisan.studio
+              artisanstudio.in@gmail.com
             </a>
           </div>
         </div>

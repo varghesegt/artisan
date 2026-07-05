@@ -13,7 +13,7 @@ const projects = [
     title: "Royal Foot Care",
     tagline: "Therapeutic Reflexology Shop",
     category: "Business Website",
-    year: "2024",
+    year: "2026",
     image: "/royal.png",
     color: "#E03131",
     description:
@@ -26,7 +26,7 @@ const projects = [
     title: "MHC Hospital",
     tagline: "World-Class Multispecialty Healthcare",
     category: "Healthcare Website",
-    year: "2024",
+    year: "2026",
     image: "/mhc.png",
     color: "#12B886",
     description:
@@ -39,7 +39,7 @@ const projects = [
     title: "Kalvikann Foundation",
     tagline: "Education × Sustainability × Health",
     category: "Non-Profit Website",
-    year: "2024",
+    year: "2026",
     image: "/kalvikann.png",
     color: "#099268",
     description:
@@ -52,7 +52,7 @@ const projects = [
     title: "ClearMind",
     tagline: "Student Mental Wellbeing Platform",
     category: "Web Application",
-    year: "2024",
+    year: "2026",
     image: "/clearmind.png",
     color: "#7C3AED",
     description:
@@ -65,7 +65,7 @@ const projects = [
     title: "Vearnify",
     tagline: "Website Company - Digital Excellence Redefined",
     category: "Premium Website",
-    year: "2025",
+    year: "2026",
     image: "/vearnify.png",
     color: "#6C2BD9",
     description:
@@ -78,7 +78,7 @@ const projects = [
     title: "HallSync",
     tagline: "Full-Stack College Operations Platform",
     category: "Full-Stack Web Application",
-    year: "2025",
+    year: "2026",
     image: "/hallsync.png",
     color: "#3B5BDB",
     description:
@@ -102,7 +102,7 @@ function FeaturedProject({ project, index }: { project: typeof projects[0]; inde
       >
         {/* Image */}
         <div className="w-full lg:w-7/12">
-          <div className="relative aspect-[16/10] rounded-md overflow-hidden bg-cream group cursor-pointer">
+          <div className="relative aspect-[16/10] rounded-md overflow-hidden bg-cream group">
             {/* Colored accent border on top */}
             <div
               className="absolute top-0 left-0 right-0 h-1 z-10 transition-all duration-500"
@@ -117,21 +117,6 @@ function FeaturedProject({ project, index }: { project: typeof projects[0]; inde
                 isHovered ? "scale-[1.03]" : "scale-100"
               }`}
             />
-            {/* Overlay on hover */}
-            <div
-              className={`absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent transition-opacity duration-500 ${
-                isHovered ? "opacity-100" : "opacity-0"
-              }`}
-            />
-            {/* View project button on hover */}
-            <div
-              className={`absolute bottom-6 left-6 flex items-center gap-2 text-white text-sm font-medium transition-all duration-500 ${
-                isHovered ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-            >
-              <span>View Case Study</span>
-              <ArrowUpRight className="w-4 h-4" />
-            </div>
           </div>
         </div>
 
