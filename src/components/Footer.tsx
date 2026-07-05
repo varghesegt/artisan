@@ -130,11 +130,12 @@ export default function Footer() {
               ))}
             </ul>
             <div className="mt-8">
+              <p className="font-label text-mid-grey mb-4 text-xs">Direct Email</p>
               <a
-                href="mailto:hello@artisan.studio"
-                className="text-sm text-sage-light hover:text-alabaster transition-colors duration-300"
+                href="mailto:artisanstudio.in@gmail.com"
+                className="text-sm text-sage-light hover:text-alabaster transition-colors duration-300 break-all"
               >
-                hello@artisan.studio
+                artisanstudio.in@gmail.com
               </a>
             </div>
           </div>
