@@ -1,0 +1,341 @@
+@import "tailwindcss";
+
+/* ─── Google Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ─── Theme Tokens (Tailwind v4 @theme) ─── */
+@theme inline {
+  /* Colors */
+  --color-alabaster: #F9F9F8;
+  --color-cream: #F3F1ED;
+  --color-soft-black: #1A1A1A;
+  --color-true-black: #000000;
+  --color-warm-grey: #E5E5E0;
+  --color-mid-grey: #9A9A95;
+  --color-sage: #8B9A7B;
+  --color-sage-dark: #6B7A5B;
+  --color-sage-light: #C5D4B5;
+  --color-terracotta: #C4835A;
+
+  /* Fonts */
+  --font-serif: 'Playfair Display', 'Georgia', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Font Sizes — editorial scale */
+  --font-size-display: clamp(3rem, 8vw, 7.5rem);
+  --font-size-h1: clamp(2.25rem, 5vw, 4.5rem);
+  --font-size-h2: clamp(1.75rem, 3.5vw, 3rem);
+  --font-size-h3: clamp(1.25rem, 2.5vw, 2rem);
+  --font-size-h4: clamp(1.125rem, 1.5vw, 1.5rem);
+  --font-size-body: clamp(0.9375rem, 1vw, 1.0625rem);
+  --font-size-small: clamp(0.75rem, 0.85vw, 0.875rem);
+  --font-size-tiny: 0.6875rem;
+
+  /* Spacing */
+  --spacing-section: clamp(5rem, 12vw, 10rem);
+  --spacing-block: clamp(3rem, 6vw, 6rem);
+
+  /* Animations */
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-fade-in: fade-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-slide-up: slide-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-scale-in: scale-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-mask-up: mask-up 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  --animate-underline: underline-grow 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ─── Keyframes ─── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes mask-up {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes underline-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* ─── Base Styles ─── */
+:root {
+  --background: #F9F9F8;
+  --foreground: #1A1A1A;
+  scroll-behavior: smooth;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+/* ─── Typography Utilities ─── */
+.font-display {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-display);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+}
+
+.font-heading-1 {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-h1);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+
+.font-heading-2 {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-h2);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+.font-heading-3 {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-h3);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  font-weight: 500;
+}
+
+.font-heading-4 {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-h4);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+
+.font-label {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-tiny);
+  line-height: 1;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background-color: var(--color-sage-light);
+  color: var(--color-soft-black);
+}
+
+/* ─── Custom Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-alabaster);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-warm-grey);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-mid-grey);
+}
+
+/* ─── Reveal Animation Helper ─── */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal-visible {
+  animation: var(--animate-fade-up);
+}
+
+/* ─── Photo Holder Styles ─── */
+.photo-holder {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-warm-grey) 100%);
+}
+
+.photo-holder img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.photo-holder:hover img {
+  transform: scale(1.05);
+}
+
+.photo-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-cream) 0%,
+    var(--color-warm-grey) 50%,
+    var(--color-cream) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ─── Magnetic Button ─── */
+.magnetic-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-soft-black);
+  background: transparent;
+  color: var(--color-soft-black);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+}
+
+.magnetic-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-soft-black);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.magnetic-btn:hover::before {
+  transform: translateY(0);
+}
+
+.magnetic-btn:hover {
+  color: var(--color-alabaster);
+}
+
+.magnetic-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.magnetic-btn-filled {
+  background: var(--color-soft-black);
+  color: var(--color-alabaster);
+}
+
+.magnetic-btn-filled::before {
+  background: var(--color-sage-dark);
+}
+
+/* ─── Animated Underline Input ─── */
+.input-underline {
+  width: 100%;
+  padding: 1rem 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-body);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-warm-grey);
+  outline: none;
+  color: var(--color-soft-black);
+  transition: border-color 0.3s ease;
+}
+
+.input-underline:focus {
+  border-bottom-color: var(--color-soft-black);
+}
+
+.input-underline::placeholder {
+  color: var(--color-mid-grey);
+  font-weight: 300;
+}
+
+/* ─── Horizontal Rule ─── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-warm-grey);
+  border: none;
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
